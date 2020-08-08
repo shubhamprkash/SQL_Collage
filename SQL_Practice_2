@@ -1,0 +1,15 @@
+CREATE TABLE Reliance ( Customer_id int, Customer_Name VARCHAR2(15),Age INT, Service VARCHAR2(10), Pincode int);
+Alter table Reliance rename to Jio;
+ALTER TABLE JIO MODIFY Service VARCHAR2(20) ;
+INSERT INTO JIO VALUES(112244,'SHIVAM',20,'CALLING',804453);
+INSERT INTO JIO VALUES(195444,'Denny',20,'Typing',895862);
+INSERT INTO JIO VALUES(159594,'Aaryan',20,'Listening',894845);
+INSERT INTO JIO VALUES(193414,'Sourav',20,'Ram_Ram',895842);
+INSERT INTO JIO VALUES(164921,'Shubham',20,'Coding',869841);
+INSERT INTO JIO VALUES(195995,'Pranjul',20,'Study',896325);
+Select * from Jio;
+select Customer_Name,Service from Jio;
+UPDATE Jio SET Pincode=560008 WHERE Customer_id=164921;
+Select * from Jio Where Age>=18 and Age <=22;
+UPDATE Jio Set service='in class' where Customer_name='Shivam' or Age=20;
+Select Customer_Name,Customer_id,Age FROM Jio WHERE Service='Study';
