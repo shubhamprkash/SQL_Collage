@@ -1,0 +1,164 @@
+
+CREATE TABLE MANAGER (M_id int primary key, M_name varchar(25), M_branch varchar(40));
+
+
+CREATE TABLE BANK(Acc_num int unique, Acc_hOlder varchar(30), Acc_balance number(12,2), Acc_location varchar(40), M_id int,constraint s_p foreign key(M_id) references  MANAGER(M_id));
+
+INSERT INTO MANAGER VALUES(101,'Shubham','Bnagalore');
+INSERT INTO MANAGER VALUES(102,'Rohan','Patna');
+INSERT INTO MANAGER VALUES(103,'Hiya','Kolkata');
+INSERT INTO MANAGER VALUES(104,'Shivam','Danapur');
+INSERT INTO MANAGER VALUES(105,'Denny','Hyderabad');
+INSERT INTO MANAGER VALUES(106,'Sonam','Amritsar');
+INSERT INTO MANAGER VALUES(107,'Aayushi','Delhi');
+INSERT INTO MANAGER VALUES(108,'Bunny','Uttrakhand');
+
+INSERT INTO BANK VALUES(301,'Raja babu',95771.08,'NCR',107);
+INSERT INTO BANK VALUES(302,'Aryan tiwari',560000,'BIhar',102);
+INSERT INTO BANK VALUES(303,'Madhaw dann',68711.50,'Vijaywada',105);
+INSERT INTO BANK VALUES(304,'Om prakash',85991.60,'Jalandhar',102);
+INSERT INTO BANK VALUES(305,'Anjali baksi',982200.6,'Kolkata',103);
+INSERT INTO BANK VALUES(306,'Sarthak das',8001200.3,'Mysore',101);
+INSERT INTO BANK VALUES(307,'Vishal kumar',500440,'Danapur',104);
+INSERT INTO BANK VALUES(308,'Vivek bla',,'Dehradun',108);
+
+
+
+
+SELECT * FROM BANK WHERE NOT M_location='Delhi' AND NOT M_location='Mumbai';
+
+
+
+ALTER TABLE BANK ADD Manager_id varchar(30);
+
+UPDATE BANK SET Manager_id='31' where Acc_num=301;
+UPDATE BANK SET Manager_id='32' where Acc_num=302;
+UPDATE BANK SET Manager_id='33' where Acc_num=303;
+UPDATE BANK SET Manager_id='34' where Acc_num=304;
+UPDATE BANK SET Manager_id='35' where Acc_num=305;
+UPDATE BANK SET Manager_id='36' where Acc_num=306;
+UPDATE BANK SET Manager_id='37' where Acc_num=307;
+UPDATE BANK SET Manager_id='38' where Acc_num=308;
+
+DELETE FROM BANK where Manager_id=32;
+
+
+ALTER TABLE BANK RENAME TO Bank_info;
+
+DROP TABLE MANAGER;
+
+SELECT * FROM Bank_info ORDER BY Acc_balance DESC;
+
+
+ALTER TABLE Bank_info DROP CONSTRAINT s_p;
+
+
+SELECT M_name From MANAGER WHERE M_name LIKE '%e%e%';
+
+UPDATE Bank_info SET Acc_balance=Acc_balance+4500 WHERE Acc_locationn='Uttarakhand';
+
+UPDATE Bank_info SET Acc_balance=Acc_balance+4500 WHERE Acc_location='Jalandhar';
+
+
+
+*************************************************************************Oracle Live Code*******************************************************
+
+
+--CREATE TABLE MANAGER (M_id int primary key, M_name varchar(25), M_branch varchar(40));
+
+--CREATE TABLE BANK(Acc_num int unique, Acc_hOlder varchar(30), Acc_balance number(12,2), Acc_location varchar(40), M_id int,constraint s_p foreign key(M_id) references  MANAGER(M_id));
+
+
+--INSERT INTO MANAGER VALUES(101,'Shubham','Bnagalore');
+
+--INSERT INTO MANAGER VALUES(102,'Rohan','Patna');
+
+--INSERT INTO MANAGER VALUES(103,'Hiya','Kolkata');
+
+--INSERT INTO MANAGER VALUES(104,'Shivam','Danapur');
+
+--INSERT INTO MANAGER VALUES(105,'Denny','Hyderabad');
+
+--INSERT INTO MANAGER VALUES(106,'Sonam','Amritsar');
+
+--INSERT INTO MANAGER VALUES(107,'Aayushi','Delhi');
+
+--INSERT INTO MANAGER VALUES(108,'Bunny','Uttrakhand');
+
+--Select *from MANAGER;
+
+
+--INSERT INTO BANK VALUES(301,'Raja babu',95771.08,'NCR',107);
+
+--INSERT INTO BANK VALUES(302,'Aryan tiwari',560000,'BIhar',102);
+
+--INSERT INTO BANK VALUES(303,'Madhaw dann',68711.50,'Vijaywada',105);
+
+--INSERT INTO BANK VALUES(304,'Om prakash',85991.60,'Jalandhar',102);
+
+--INSERT INTO BANK VALUES(305,'Anjali baksi',982200.6,'Kolkata',103);
+
+--INSERT INTO BANK VALUES(306,'Sarthak das',8001200.3,'Mysore',101);
+
+--INSERT INTO BANK VALUES(307,'Vishal kumar',500440,'Danapur',104);
+
+--INSERT INTO BANK VALUES(308,'Vivek bla',40012.60,'Dehradun',108);
+
+
+--Select * from BANK;
+
+--Select *from MANAGER;
+
+--SELECT * FROM BANK WHERE NOT Acc_location='Delhi' AND NOT Acc_location='Mumbai';
+
+
+
+--ALTER TABLE BANK ADD Manager_id varchar(30);
+
+
+--UPDATE BANK SET Manager_id='31' where Acc_num=301;
+
+--UPDATE BANK SET Manager_id='32' where Acc_num=302;
+
+--UPDATE BANK SET Manager_id='33' where Acc_num=303;
+
+--UPDATE BANK SET Manager_id='34' where Acc_num=304;
+
+--UPDATE BANK SET Manager_id='35' where Acc_num=305;
+
+--UPDATE BANK SET Manager_id='36' where Acc_num=306;
+
+--UPDATE BANK SET Manager_id='37' where Acc_num=307;
+
+--UPDATE BANK SET Manager_id='38' where Acc_num=308;
+
+
+
+--DELETE FROM BANK where Manager_id=32;
+
+--ALTER TABLE BANK RENAME TO Bank_info;
+
+--SELECT * FROM Bank_info;
+
+
+--DROP TABLE MANAGER;
+
+--SELECT * FROM Bank_info ORDER BY Acc_balance DESC;
+
+
+
+--ALTER TABLE Bank_info DROP CONSTRAINT s_p;
+
+
+
+--SELECT M_name From MANAGER WHERE M_name LIKE '%e%e%';
+
+
+
+--UPDATE Bank_info SET Acc_balance=Acc_balance+4500 WHERE Acc_location='Uttarakhand';
+
+
+--UPDATE Bank_info SET Acc_balance=Acc_balance+4500 WHERE Acc_location='Jalandhar';
+
+
+--Select * from Bank_info;
