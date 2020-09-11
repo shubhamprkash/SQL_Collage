@@ -1,0 +1,37 @@
+CREATE TABLE STUDENT(SID INT PRIMARY KEY, NAME VARCHAR2(12), AGE NUMBER(3), MARKS NUMBER(3));
+
+INSERT INTO STUDENT VALUES(1,'SHOBIT',21,85);
+INSERT INTO STUDENT VALUES(1,'SHIBA',20,65);
+INSERT INTO STUDENT VALUES(1,'DENNY',19,47);
+INSERT INTO STUDENT VALUES(1,'SHIVAM',25,90);
+INSERT INTO STUDENT VALUES(1,'AARYAN',28,58);
+
+SELECT * FROM STUDENTS;
+
+SELECT SUM(MARKS) AS TOTAL_MARKS FROM STUDENTS;
+
+SELECT COUNT(MARKS) AS TOTAL_awarded FROM STUDENTS;
+
+SELECT AVG(MARKS) AS TOTAL_MARKS FROM STUDENTS;
+
+SELECT MIN(MARKS) AS MIN_MARKS FROM STUDENTS;
+
+SELECT MAX(MARKS) AS MAX_MARKS FROM STUDENTS;
+
+/* ***************************question**************
+
+	EMPLOYEE(EID,ENAME,SALARY,AGE,BONUS);
+1. diplay the avarage age of the EMPLOYEES working.
+2.what is the total amount given to all employess as salary by the org.
+3.find the number of employees who are getting a bonus.
+4. ehat is the highest and lowest amount given as salary to employees.
+5.find the different btw lowest and highest salary to employees.
+6.display the details of employees who earn less than the aavg salary given to all employees.
+
+1.SELECT AVG(AGE) AS AVG_AGE FROM EMPLOYEE;
+2.SELECT SUM(SALARY) AS SUM_SALARY FROM EMPLOYEE;
+3.SELECT COUNT(BONUS) AS EMP_BONUS FROM EMPLOYEE;
+4.SELECT MAX(SALARY) AS MAX_SALARY FROM EMPLOYEE;
+5.SELECT MAX(SALARY)-MIN(SALARY) FROM EMPLOYEE;
+6.SELECT * FROM EMPLOYEE WHERE SALARY< (SELECT AVG(SALARY) FROM EMPLOYEE);
+
